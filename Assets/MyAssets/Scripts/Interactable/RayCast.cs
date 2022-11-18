@@ -10,6 +10,7 @@ public class RayCast : MonoBehaviour
     [SerializeField] Camera _camera;
     [SerializeField] float range = 2f;
     [SerializeField] private GameObject _interactPnl;
+    [SerializeField] private GameObject _levelPnl;
     [SerializeField] PlayerController _player;
     LayerMask _mask;
     private void Start()
@@ -46,6 +47,7 @@ public class RayCast : MonoBehaviour
             Debug.DrawRay(_camera.transform.position, _camera.transform.TransformDirection(Vector3.forward) * range, Color.white);
             // Debug.Log("Did not Hit");
             _interactPnl.SetActive(false);
+            _levelPnl.SetActive(false);
 
         }
     }

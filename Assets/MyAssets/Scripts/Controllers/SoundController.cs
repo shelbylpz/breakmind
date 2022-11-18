@@ -11,7 +11,7 @@ public class SoundController : MonoBehaviour
     void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();
-        m_AudioSource.Play();
+        m_AudioSource.Pause();
     }
 
     // Update is called once per frame

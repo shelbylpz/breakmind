@@ -33,13 +33,19 @@ public class Linterna : MonoBehaviour
         {
             typeLight = false;
             _linterna2.SetActive(false);
-            _enabled = false;
+            if (_enabled)
+                _linterna.SetActive(true);
+            else
+                _enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             typeLight = true;
             _linterna.SetActive(false);
-            _enabled = false;
+            if (_enabled)
+                _linterna2.SetActive(true);
+            else
+                _enabled = false;
         }
         if (!typeLight)
         {
