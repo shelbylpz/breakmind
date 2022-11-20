@@ -82,7 +82,7 @@ public class DialogueController : MonoBehaviour
         {
             _interactTMP.text = "Press <E> to Interact";
         }
-        #endregion
+        #endregion 
 
         _dialoguePnl.SetActive(false);
         _interactPnl.SetActive(false);
@@ -126,7 +126,7 @@ public class DialogueController : MonoBehaviour
 
         }*/
         #endregion
-        _dialoguePnl.SetActive(true);
+        ShowInteract();
     }
 
     private void ContinueDialogue()
