@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     #region Key's
     [SerializeField] public List<bool> _keys;
+    [SerializeField] public int _nKeys = 0;
+     TextMeshProUGUI _card;
+    [SerializeField] GameObject _CardPnl;
     #endregion
 
     #region Variables Brinco
@@ -58,6 +63,9 @@ public class PlayerController : MonoBehaviour
         _isRunning = false;
      */
         _speed = _maxSpeed * 1f;
+        
+        _card = _CardPnl.transform.GetComponentInChildren<TextMeshProUGUI>();
+
     }
 
     // Update is called once per frame
@@ -69,27 +77,27 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(_horizontalInput, 0, _forwardInput);
         transform.Translate(movement * _speed * Time.deltaTime);
         #endregion
-     /*   #region Animacion de movimiento
-        float velocity = Mathf.Max(Mathf.Abs(_horizontalInput), Mathf.Abs(_forwardInput)) * (_speed / _maxSpeed);
-        _playerAnimation.SetSpeed(velocity);
+        #region Animacion de movimiento Comentada
+        /* float velocity = Mathf.Max(Mathf.Abs(_horizontalInput), Mathf.Abs(_forwardInput)) * (_speed / _maxSpeed);
+         _playerAnimation.SetSpeed(velocity);
+         #endregion
+
+         #region Cambio entre correr y caminar
+         if (Input.GetKeyDown(KeyCode.LeftShift))
+         {
+             _isRunning = !_isRunning;
+             if (_isRunning)
+             {
+                 _speed = _maxSpeed;
+             }
+             else
+             {
+                 _speed = _maxSpeed * 0.5f;
+             }
+         }
+        */
         #endregion
 
-        #region Cambio entre correr y caminar
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            _isRunning = !_isRunning;
-            if (_isRunning)
-            {
-                _speed = _maxSpeed;
-            }
-            else
-            {
-                _speed = _maxSpeed * 0.5f;
-            }
-        }
-
-        #endregion
-    */
         #region Peticion de brinco
         if (Input.GetKeyDown(KeyCode.Space) && _availableJumps > 0)
         {
@@ -120,6 +128,8 @@ public class PlayerController : MonoBehaviour
     public void updateKeys(int _keyPos)
      {
          _keys[_keyPos] = true;
+         _nKeys++;
+        _card.text = _nKeys.ToString();
      }
 
     /*private void OnTriggerEnter(Collider collider)
