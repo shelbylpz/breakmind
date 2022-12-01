@@ -38,7 +38,7 @@ public class Hides : Interactable
 
             }
         }
-        else
+        else if(transform.gameObject.CompareTag("Lorent"))
         {
             if (actualState == initialState)
             {
