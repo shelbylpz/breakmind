@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 493469542719103004}
   - component: {fileID: 6811249491350010383}
   - component: {fileID: 8251218950860310001}
-  - component: {fileID: 3623909463154667897}
   m_Layer: 0
   m_Name: Duct Elbow 01
   m_TagString: Untagged
@@ -111,18 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6533312, y: 0.6462134, z: 1.3371269}
-  m_Center: {x: -0.00000020861626, y: -0.0035589337, z: -0.6663725}
---- !u!65 &3623909463154667897
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2226451552169432256}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6533312, y: 1.5265579, z: 0.64882934}
-  m_Center: {x: -0.00000020861626, y: 0.43661332, z: -1.0105212}
+  m_Size: {x: 0.6533312, y: 1.5069458, z: 1.3371269}
+  m_Center: {x: -0.00000020861626, y: 0.42680728, z: -0.6663725}
